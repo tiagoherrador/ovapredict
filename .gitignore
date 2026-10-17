@@ -1,0 +1,7 @@
+# This repository publishes only its narrative README and privacy-reviewed figures.
+# Everything else is ignored by default so patient data, model artifacts, and internal work cannot be added accidentally.
+*
+!.gitignore
+!README.md
+!assets/
+!assets/*.png
