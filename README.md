@@ -2,44 +2,87 @@
   <img src="assets/ovapredict-logo.png" alt="OvaPredict logo" width="240">
 </p>
 
-# OvaPredict — reading ovarian cancer through the language of tissue
+# OvaPredict – reading ovarian cancer through the patterns in its tissue
 
-We are building OvaPredict because ovarian cancer is not a single, uniform disease. A tumor can contain regions with different shapes, organizations, and molecular signals. That heterogeneity matters: it makes tissue harder to describe consistently, harder to compare across cases, and harder to connect with the biology that drives the disease.
+> **Early-stage research, shared while it grows. It is not a clinical tool.** The data are not public, so this page shows the idea and anonymised figures only: no patient data, tissue images, code or models.
 
-Our team brings together computational pathology, artificial intelligence, and translational oncology to make those patterns easier to see, describe, and study. We are not trying to replace the pathologist. We are trying to add a quantitative layer of observation that can help turn complex tissue images into questions that are easier to ask and eventually to test.
+## What this project is
+
+Ovarian cancer is not a single, uniform disease. One tumour can contain regions with different shapes, organisation and molecular signals, which makes tissue hard to describe consistently, hard to compare between cases, and hard to connect with the biology behind the disease.
+
+OvaPredict is a team project that brings together computational pathology, artificial intelligence and translational oncology to make those patterns measurable. We are not trying to replace the pathologist. The aim is to add a quantitative layer to what a pathologist sees, so that a complex tissue image becomes a set of questions that are easier to ask and, eventually, to test.
+
+The questions we are working on are:
+
+1. **Can tissue be described by a small number of recurring patterns,** found without telling the algorithm what to look for?
+2. **Do those patterns make sense when you look at the tissue** behind them?
+3. **Does the balance of patterns change** between benign, borderline and malignant tumours?
+4. **Do the patterns carry a measurable molecular signature?**
+
+**My role:** data scientist and developer of the project.
+
+## The short version
+
+| Question | What we see so far |
+|---|---|
+| Are there recurring patterns? | **It looks like it.** Our early work suggests that the tissue organises into a small number of recurring patterns, which we call morphotypes. |
+| Do they make sense in the tissue? | **We can check.** For each pattern we go back to representative patches of tissue, so the grouping can be reviewed by eye instead of trusted as a black box. |
+| Do they change with the diagnosis? | **Some seem to.** Preliminary analyses suggest that some patterns shift along the benign, borderline and malignant spectrum. For now that is a hypothesis to validate, not a diagnostic signal. |
+| Do they carry a molecular signature? | **We are exploring it.** We are looking at whether each pattern has its own marker-intensity profile, without claiming a biomarker. |
+| Where is the project now? | **Proof of concept.** We presented it in September 2026; the next step is to validate the patterns in independent cohorts. |
+
+## How it works
 
 ![From multiplex immunofluorescence image to morphospatial profile](assets/project-workflow.png)
 
-We work with multiplex immunofluorescence, a technique that lets us observe several proteins in the same tissue sample. Instead of asking an algorithm to begin with a fixed diagnosis, we divide each image into many small tissue regions and let unsupervised artificial intelligence look for recurring visual patterns. We then bring those regions together into a morphospatial profile: a quantitative portrait of how those patterns are distributed within a case.
+We work with **multiplex immunofluorescence**, a technique that shows several proteins in the same tissue sample. Instead of starting from a fixed diagnosis, we cut each image into many small tissue regions and let an **unsupervised** algorithm look for patterns that keep coming back. Then we bring the regions of each case together into a **morphospatial profile**: a quantitative portrait of how those patterns are distributed in that tumour.
 
-## What we are learning
+## Following the project step by step
 
-Our early work suggests that tissue can be organized into a small number of recurring morphospatial patterns. The map below is a visual representation of that idea: regions that look more alike are placed closer together, while visually different regions occupy different areas of the map. We use it to inspect the structure that emerges from the images before attaching a biological interpretation to it.
+<details>
+<summary><b>Show the five steps</b> (the map of patterns, back to the tissue, each case as a profile, the diagnostic spectrum, a molecular signature)</summary>
+
+### 1. A map of the patterns
+
+On this map, regions that look alike sit close together and regions that look different sit apart. We use it to inspect the structure that comes out of the images before giving it any biological meaning.
 
 ![Map of the recurring morphospatial patterns found by the unsupervised analysis](assets/morphospatial-map.png)
 
-Those patterns are not abstract numbers alone. We can return to the tissue image and examine representative, de-identified patches for each one. This makes the computational grouping auditable: rather than treating the model as a black box, we can ask whether a pattern looks coherent under expert review.
+### 2. Back to the tissue
+
+A pattern is more than a number: for each one we can go back to the images and look at representative, de-identified patches. This is what makes the grouping auditable, because it lets a pathologist judge whether a pattern looks coherent.
 
 ![Representative de-identified tissue patches for each morphotype](assets/representative-patches.png)
 
-When we summarize the patterns as proportions, each case becomes a profile rather than a single image. The graphic below uses only anonymous, aggregate visual information: every bar is unlabeled and no clinical or patient-level identifier is included. It shows how the balance among patterns can vary across the benign, borderline, and malignant spectrum.
+### 3. Each case as a profile
 
-![Anonymized morphospatial composition across diagnostic groups](assets/anonymized-profile-composition.png)
+When we summarise the patterns as proportions, each case becomes a profile rather than a single image. In this figure every bar is unlabelled and there is no clinical or patient information; it shows how the balance between patterns can vary across the benign, borderline and malignant spectrum.
 
-Our preliminary analyses indicate that some image-derived patterns change along that spectrum. We interpret this carefully. It is an early research signal, not a diagnosis, prognosis, or treatment recommendation. Its value today is that it gives us a concrete hypothesis to validate with independent material and pathology expertise.
+![Anonymised morphospatial composition across diagnostic groups](assets/anonymized-profile-composition.png)
+
+### 4. Patterns along the diagnostic spectrum
+
+Our preliminary analyses suggest that some patterns change along that spectrum. We read this carefully: it is an early research signal, not a diagnosis, a prognosis or a treatment recommendation. What it gives us today is a concrete hypothesis to test on independent material, with pathologists.
 
 ![Preliminary morphotype changes across the diagnostic spectrum](assets/diagnostic-gradient.png)
 
-We are also exploring whether the visual patterns retain a measurable biomarker signature. This is where imaging and molecular information can begin to speak to each other: the goal is not to claim a clinical biomarker yet, but to learn whether the computationally identified tissue patterns are connected to quantifiable biological features.
+### 5. A molecular signature?
+
+We are also looking at whether each pattern keeps a measurable marker signature. This is where the image and the molecular information can start to speak to each other. The goal is not to claim a clinical biomarker yet, but to learn whether the patterns the algorithm finds are linked to biological features we can quantify.
 
 ![Exploratory biomarker-intensity signature by morphotype](assets/biomarker-intensity-signature.png)
 
-## A project we are sharing while it grows
+</details>
 
-In September 2026, we presented OvaPredict at the [2nd International Congress of Biotechnology](https://www.unc.edu.ar/sites/default/files/Libro%20de%20Resumenes%20del%202%20Congreso%20de%20Biotecnologia%20UNC%202026.pdf), held at the National University of Córdoba in Argentina. Sharing the project there was an opportunity to discuss an early-stage idea with people working across biotechnology, health, and digital technologies.
+## Things to keep in mind
 
-We are still at the proof-of-concept stage. The next part of the journey is to validate the patterns in independent cohorts, discuss their interpretation with pathology experts, and study whether they can be meaningfully connected to clinical outcomes. We want to move carefully: every step toward translation has to be scientifically sound, clinically responsible, and respectful of the people behind the samples.
+- **It is a proof of concept.** Everything here is preliminary and has not been tested on an independent cohort.
+- **The patterns are found by an unsupervised method,** so their biological meaning still has to be established with pathologists.
+- **Nothing here is a diagnosis, a prognosis or a treatment recommendation.**
+- **What this repository does not contain:** patient data, identifiers, clinical metadata, raw tissue images, model weights, source code or unpublished results. The figures are de-identified summaries made for communication, and the underlying data cannot be reconstructed from them.
 
-> **Privacy-preserving research record.** This repository contains no patient data, identifiers, clinical metadata, raw tissue images, model weights, source code, or unpublished research material. The images above are privacy-reviewed, de-identified visual summaries created for research communication; they do not permit reconstruction of the underlying data.
+## Where it was presented, and what comes next
 
-OvaPredict is research in progress, built by people who believe that better ways of reading tissue can lead to better questions about cancer.
+We presented OvaPredict in September 2026 at the [2nd International Congress of Biotechnology](https://www.unc.edu.ar/sites/default/files/Libro%20de%20Resumenes%20del%202%20Congreso%20de%20Biotecnologia%20UNC%202026.pdf) at the National University of Córdoba, Argentina, where we discussed it with people working in biotechnology, health and digital technologies.
+
+Next, we want to validate the patterns in independent cohorts, discuss what they mean with pathology experts, and study whether they connect with clinical outcomes. Every step towards the clinic has to be scientifically sound, clinically responsible and respectful of the people behind the samples.
