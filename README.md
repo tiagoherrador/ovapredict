@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/ovapredict-logo.png" alt="OvaPredict logo" width="240">
+</p>
+
 # OvaPredict — reading ovarian cancer through the language of tissue
 
 We are building OvaPredict because ovarian cancer is not a single, uniform disease. A tumor can contain regions with different shapes, organizations, and molecular signals. That heterogeneity matters: it makes tissue harder to describe consistently, harder to compare across cases, and harder to connect with the biology that drives the disease.
