@@ -10,8 +10,7 @@
 
 Ovarian cancer is not a single, uniform disease. One tumour can contain regions with different shapes, organisation and molecular signals, which makes tissue hard to describe consistently, hard to compare between cases, and hard to connect with the biology behind the disease.
 
-OvaPredict is a team project that brings together computational pathology, artificial intelligence and translational oncology to make those patterns measurable. We are not trying to replace the pathologist. The aim is to add a quantitative layer to what a pathologist sees, so that a complex tissue image becomes a set of questions that are easier to ask and, eventually, to test.
-
+OvaPredict is a team project that brings together computational pathology, artificial intelligence and translational oncology to make those patterns measurable. We are not trying to replace the pathologist, but rather add a quantitative layer to what they see.
 The questions we are working on are:
 
 1. **Can tissue be described by a small number of recurring patterns,** found without telling the algorithm what to look for?
