@@ -2,7 +2,7 @@
   <img src="assets/ovapredict-logo.png" alt="OvaPredict logo" width="240">
 </p>
 
-# OvaPredict – reading ovarian cancer through the patterns in its tissue
+# OvaPredict – understanding ovarian cancer through the patterns in its tissue.
 
 > **Early-stage research, shared while it grows. It is not a clinical tool.** The data are not public, so this page shows the idea and anonymised figures only: no patient data, tissue images, code or models.
 
